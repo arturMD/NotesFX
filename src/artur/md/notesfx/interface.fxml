@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="artur.md.notesfx.Controller">
+       <VBox>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#addNote" style="-fx-graphic: url(res/add-16.png)">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Add a note" />
+               </tooltip></Button>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#delNote" style="-fx-graphic: url(res/del-16.png)" >
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <tooltip>
+                     <Tooltip text="Delete a note" />
+                 </tooltip></Button>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#exportNote" style="-fx-graphic: url(res/export-16.png)">
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <tooltip>
+                     <Tooltip text="Export a note to a text file" />
+                 </tooltip></Button>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#importNote" style="-fx-graphic: url(res/import-16.png)" >
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <tooltip>
+                     <Tooltip text="Import a note from a text file" />
+                 </tooltip></Button>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showSettings" style="-fx-graphic: url(res/settings-16.png)">
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <tooltip>
+                     <Tooltip text="Change settings" />
+                 </tooltip></Button>
+             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showInfo" style="-fx-graphic: url(res/info-16.png)">
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <tooltip>
+                 <Tooltip text="Display info" />
+             </tooltip></Button>
+       </VBox>
+       <ListView fx:id="noteList" prefHeight="-Infinity" prefWidth="200.0" />
+       <VBox HBox.hgrow="ALWAYS">
+              <TextArea fx:id="noteContent" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+              <HBox>
+                  <Button onAction="#saveNote" text="Save" />
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button onAction="#loadNoteFromFile" prefWidth="75.0" text="Cancel" />
+              </HBox>
+       </VBox>
+</HBox>
